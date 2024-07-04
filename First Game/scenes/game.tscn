@@ -10,18 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://brs6kbe1vohbq" path="res://scenes/slime.tscn" id="6_bx2px"]
 [ext_resource type="FontFile" uid="uid://j75tqputd1gb" path="res://assets/fonts/PixelOperator8.ttf" id="8_16iui"]
 
-[sub_resource type="GDScript" id="GDScript_7jydj"]
+[sub_resource type="GDScript" id="GDScript_ap0mo"]
 script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rsjss"]
@@ -429,16 +419,6 @@ sources/0 = SubResource("TileSetAtlasSource_rsjss")
 [sub_resource type="GDScript" id="GDScript_6stsw"]
 script/source = "extends TileMap
 
-@onready var tile_map = $\".\"
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 "
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rgj8s"]
@@ -482,10 +462,11 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
-script = SubResource("GDScript_7jydj")
+script = SubResource("GDScript_ap0mo")
 
 [node name="GameManager" type="Node2D" parent="."]
 unique_name_in_owner = true
+z_index = 1
 script = ExtResource("1_6oi4u")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
@@ -613,9 +594,6 @@ autoplay = "move"
 
 [node name="Ennemies" type="Node" parent="."]
 
-[node name="Slime" parent="Ennemies" instance=ExtResource("6_bx2px")]
-position = Vector2(-392, -12)
-
 [node name="Labels" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="Labels"]
@@ -650,3 +628,6 @@ theme_override_fonts/font = ExtResource("8_16iui")
 theme_override_font_sizes/font_size = 8
 text = "ennemies are mean"
 metadata/_edit_use_anchors_ = true
+
+[node name="Slime" parent="." instance=ExtResource("6_bx2px")]
+position = Vector2(-392, -12)

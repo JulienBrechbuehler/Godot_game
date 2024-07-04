@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cugnea0obmj1v" path="res://assets/sprites/coin.png" id="1_qvocp"]
 [ext_resource type="Script" path="res://scripts/coin.gd" id="1_s6t62"]
-[ext_resource type="AudioStream" uid="uid://bao58icujdflr" path="res://assets/sounds/coin.wav" id="3_3fyiy"]
+[ext_resource type="AudioStream" uid="uid://bao58icujdflr" path="res://assets/sounds/coin.wav" id="3_qi7pn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5xnx2"]
 atlas = ExtResource("1_qvocp")
@@ -209,7 +209,7 @@ autoplay = "default"
 shape = SubResource("CircleShape2D_ruycl")
 
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_3fyiy")
+stream = ExtResource("3_qi7pn")
 bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
