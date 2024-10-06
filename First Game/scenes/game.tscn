@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dc24udbinipmd"]
+[gd_scene load_steps=21 format=3 uid="uid://dc24udbinipmd"]
 
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="1_6oi4u"]
 [ext_resource type="PackedScene" uid="uid://cmqrk4h1520jk" path="res://scenes/player.tscn" id="1_kywlc"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://cfmb2cirjnr2o" path="res://scenes/coin.tscn" id="4_j0t0g"]
 [ext_resource type="PackedScene" uid="uid://brs6kbe1vohbq" path="res://scenes/slime.tscn" id="6_bx2px"]
 [ext_resource type="FontFile" uid="uid://j75tqputd1gb" path="res://assets/fonts/PixelOperator8.ttf" id="8_16iui"]
+[ext_resource type="PackedScene" uid="uid://cd80chtc2n267" path="res://scenes/inventory_item.tscn" id="10_1cpi3"]
+[ext_resource type="Texture2D" uid="uid://cmuyq2on6ewei" path="res://assets/sprites/Tiles/tile_0064.png" id="11_ip0y0"]
+[ext_resource type="Texture2D" uid="uid://cw435pygii5sy" path="res://assets/sprites/Tiles/tile_0008.png" id="12_volno"]
 
 [sub_resource type="GDScript" id="GDScript_ap0mo"]
 script/source = "extends Node2D
@@ -631,3 +634,17 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Slime" parent="." instance=ExtResource("6_bx2px")]
 position = Vector2(-392, -12)
+
+[node name="Inventory_Item" parent="." instance=ExtResource("10_1cpi3")]
+position = Vector2(78, -56)
+item_type = "deco"
+item_name = "levier"
+item_texture = ExtResource("11_ip0y0")
+item_effect = "test"
+
+[node name="Inventory_Item2" parent="." instance=ExtResource("10_1cpi3")]
+position = Vector2(-54, -23)
+item_type = "deco"
+item_name = "levier"
+item_texture = ExtResource("12_volno")
+item_effect = "test2"
